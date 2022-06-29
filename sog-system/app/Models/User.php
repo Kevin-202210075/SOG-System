@@ -20,6 +20,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'username',
         'password',
     ];
 
@@ -41,4 +42,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function scopeFilter($query)
+    {
+        if (request('search')) {
+            return $query->where('name', 'like', '%' . request('search') . '%')
+                ->orWhere('username', 'like', '%' . request('search') . '%');
+        }
+    }
+
+    public function datacustomer()
+    {
+        return $this->hasMany(DataCustomer::class);
+    }
 }

@@ -47,56 +47,57 @@
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link {{ $title === 'Dashboard' ? 'active' : '' }}" aria-current="page"
+                            <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}" aria-current="page"
                                 href="/dashboard">
                                 <span data-feather="grid" class="align-text-bottom"></span>
                                 Dashboard
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ $title === 'Data Admin' ? 'active' : '' }}"
+                            <a class="nav-link {{ Request::is('dashboard/dataadmin*') ? 'active' : '' }}"
                                 href="/dashboard/dataadmin">
                                 <span data-feather="user" class="align-text-bottom"></span>
                                 Data Admin
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ $title === 'Data Customer' ? 'active' : '' }}"
+                            <a class="nav-link {{ Request::is('dashboard/datacustomer*') ? 'active' : '' }}"
                                 href="/dashboard/datacustomer">
                                 <span data-feather="users" class="align-text-bottom"></span>
                                 Data Customer
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ $title === 'Data Supplier' ? 'active' : '' }}"
+                            <a class="nav-link {{ Request::is('dashboard/datasupplier*') ? 'active' : '' }}"
                                 href="/dashboard/datasupplier">
                                 <span data-feather="users" class="align-text-bottom"></span>
                                 Data Supplier
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ $title === 'Data Barang' ? 'active' : '' }}"
+                            <a class="nav-link {{ Request::is('dashboard/databarang*') ? 'active' : '' }}"
                                 href="/dashboard/databarang">
                                 <span data-feather="package" class="align-text-bottom"></span>
                                 Data Barang
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ $title === 'Pricelist' ? 'active' : '' }}"
+                            <a class="nav-link {{ Request::is('dashboard/pricelist*') ? 'active' : '' }}"
                                 href="/dashboard/pricelist">
                                 <span data-feather="dollar-sign" class="align-text-bottom"></span>
                                 Pricelist
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ $title === 'Pilih Transaksi' ? 'active' : '' }}"
+                            <a class="nav-link {{ Request::is('dashboard/transaksi*') ? 'active' : '' }}"
                                 href="/dashboard/transaksi">
                                 <span data-feather="bar-chart-2" class="align-text-bottom"></span>
                                 Transaksi
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ $title === 'Laporan' ? 'active' : '' }}" href="#">
+                            <a class="nav-link {{ Request::is('dashboard/laporan*') ? 'active' : '' }}"
+                                href="/dashboard/laporan">
                                 <span data-feather="file-text" class="align-text-bottom"></span>
                                 Laporan
                             </a>

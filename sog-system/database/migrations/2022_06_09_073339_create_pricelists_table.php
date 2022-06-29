@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('pricelists', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('nama_customer');
+            $table->foreignId('barcode');
+            $table->foreignId('nama_barang');
+            $table->integer('harga');
             $table->timestamps();
         });
     }

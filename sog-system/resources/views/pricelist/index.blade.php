@@ -5,8 +5,16 @@
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <h1 class="h2">{{ $title }}</h1>
         </div>
-        <button type="button" class="btn btn-primary mb-3"><span data-feather="plus-square"></span>
-            Tambah Pricelist</button>
+        <a href="{{ route('pricelist.create') }}" class="btn btn-primary mb-3"><span data-feather="plus-square"></span>
+            Tambah
+            Pricelist</a>
+
+        @if (session()->has('success'))
+            <div class="alert alert-success" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
+
         <div class="card">
             <nav class="navbar navbar-light bg-light justify-content-between">
                 <nav aria-label="...">

@@ -10,4 +10,12 @@ class DataSupplier extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    public function scopeFilter($query)
+    {
+        if (request('search')) {
+            return $query->where('nama_supplier', 'like', '%' . request('search') . '%')
+                ->orWhere('kota', 'like', '%' . request('search') . '%');
+        }
+    }
 }

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('data_suppliers', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_supplier');
+            $table->string('nama_supplier')->unique();
             $table->string('kota');
             $table->timestamps();
         });
